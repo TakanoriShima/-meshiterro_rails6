@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_one_attached :profile_image
   
+  # ---- 以下を追加してください ---- #
+  validates :name, presence: true
+  
   def get_profile_image(w, h)
     # profile_image.purge
     unless profile_image.attached?
