@@ -12,6 +12,13 @@
 
   <body>
     <% if user_signed_in? %>
+
+      <!-- ここからコードを書きましょう -->
+      <li>
+        <%= link_to '投稿フォーム', new_post_image_path %>
+      </li>
+      <!-- ここまでのあいだにコードを書きましょう -->
+
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
