@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -16,7 +15,11 @@
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
+          <% if user_signed_in? %>
+          <a class="navbar-brand p-3" href="/post_images"><%= image_tag('logo.png') %></a>
+          <% else %>
           <a class="navbar-brand p-3" href="/"><%= image_tag('logo.png') %></a>
+          <% end %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
